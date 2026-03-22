@@ -1,19 +1,34 @@
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+*.xcodeproj
+!*.xcodeproj/project.pbxproj
+*.xcworkspace
+!*.xcworkspace/contents.xcworkspacedata
+xcuserdata/
 *.xcuserstate
 *.xcuserdatad
-*.xcworkspace/xcuserdata/
-xcuserdata/
 *.pbxuser
 *.mode1v3
 *.mode2v3
 *.perspectivev3
-*.ipa
-*.dSYM.zip
-*.dSYM
+!default.pbxproj
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+# Build
 build/
 DerivedData/
 *.hmap
-*.xcadf
-*.xccheckout
-*.xcscmblueprint
-*.xcodeproj/project.xcworkspace/xcuserdata/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# SPM
+.swiftpm/
+Packages
+*.xcodeproj_bundle_definition

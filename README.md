@@ -1,28 +1,37 @@
 # macOS Inactivity Monitor
 
-A background macOS utility that detects applications that have been open and inactive for a configurable period (default: 30 minutes), and prompts the user to close or force quit them.
+A background macOS utility that detects applications open and inactive for a configurable period, prompting the user to close or force quit them.
 
 ## Features
 
-- Detect inactive applications
-- Popup alerts with actions:
-  - Close app
-  - Force quit
-  - Ignore
-- Allowlist system
-- GUI interface
-- Background monitoring
-- Menu bar support (optional)
+- Detect inactive applications automatically
+- Configurable inactivity threshold (default: 30 minutes)
+- Popup alerts with actions: Close, Force Quit, or Ignore
+- Allowlist system for apps to exclude
+- GUI dashboard for monitoring
+- Menu bar support
+
+## Requirements
+
+- macOS 12.0+
+- Xcode 14.0+
+
+## Building
+
+```bash
+cd InactivityMonitor
+xcodegen generate
+xcodebuild -project InactivityMonitor.xcodeproj -scheme InactivityMonitor -configuration Debug build
+```
+
+Or open `InactivityMonitor/InactivityMonitor.xcodeproj` in Xcode.
 
 ## Tech Stack
 
-- Swift
-- AppKit or SwiftUI
-- NSWorkspace APIs
-- Accessibility APIs (AXUIElement)
+- Swift 5.9
+- SwiftUI
+- AppKit (NSWorkspace, Accessibility APIs)
 
-## Goals
+## License
 
-- Reduce system clutter
-- Improve performance
-- Encourage intentional app usage
+MIT
