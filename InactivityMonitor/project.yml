@@ -1,0 +1,38 @@
+name: InactivityMonitor
+options:
+  bundleIdPrefix: com.inactivitymonitor
+  deploymentTarget:
+    macOS: "13.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    PRODUCT_BUNDLE_IDENTIFIER: com.inactivitymonitor.app
+
+targets:
+  InactivityMonitor:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+        type: group
+      - path: Resources
+        type: group
+    settings:
+      base:
+        PRODUCT_NAME: InactivityMonitor
+        PRODUCT_BUNDLE_IDENTIFIER: com.inactivitymonitor.app
+        INFOPLIST_FILE: Resources/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Resources/InactivityMonitor.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        COMBINE_HIDPI_IMAGES: YES
+        LD_RUNPATH_SEARCH_PATHS:
+          - "@executable_path/../Frameworks"
+        ENABLE_HARDENED_RUNTIME: YES
+    entitlements:
+      path: Resources/InactivityMonitor.entitlements
