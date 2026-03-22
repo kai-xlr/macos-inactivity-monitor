@@ -32,3 +32,11 @@ DerivedData/
 .swiftpm/
 Packages
 *.xcodeproj_bundle_definition
+
+# Documentation
+*.md
+!README.md
+
+# Local files
+instructions.txt
+TODO.md
